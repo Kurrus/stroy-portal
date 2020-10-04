@@ -1,0 +1,88 @@
+.toolbar{
+  height: 32px;
+  background: $bg_grey;
+  @media (max-width: 576px) {
+    height: auto;
+    padding: 10px 0;
+  }
+  >._container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__location{
+    a{
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    img{
+      width: 12px;
+      height: 14.4px;
+      margin-right: 8px;
+    }
+    span{
+      color: $hint;
+    }
+  }
+  &__list-menu{
+    cursor: pointer;
+    position: relative;
+
+    span{
+      color: $hint;
+      display: flex;
+      align-items: center;
+
+      img{
+        height: 18px;
+        width: 18px;
+      }
+    }
+    ul{
+      position: absolute;
+      right: 0;
+      top: calc(100% + 5px);
+      background: #fff;
+      width: max-content;
+      padding: 0px;
+      border-radius: 5px;
+      opacity: 0;
+      visibility: hidden;
+      border: 1px solid rgba(0,0,0,.15);
+      z-index: 999999;
+      overflow: hidden;
+      &._active{
+        opacity: 1;
+        visibility: visible;
+      }
+      li{
+        margin: 0;
+        padding: 5px 10px;
+        &:hover{
+          background: $hint;
+          a{
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  &__lists{
+    display: flex;
+    align-items: center;
+    li{
+      margin: 0 12px;
+      @media (max-width: 576px) {
+        margin: 0;
+        margin-right: 10px;
+      }
+      a{
+        color: $hint;
+      }
+    }
+
+  }
+}
